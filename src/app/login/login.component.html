@@ -1,0 +1,16 @@
+<div class="loginHolder">
+	<md-card class="loginCard">
+		<md-card-title>Ingresar a Zomoztest</md-card-title>
+		<md-card-content>
+			<md-input-container>
+				<input mdInput placeholder="Correo" type="email" [(ngModel)]="user.email" required>
+			</md-input-container>
+			<br>
+			<md-input-container>
+				<input mdInput placeholder="Contraseña" type="password" [(ngModel)]="user.password" required>
+			</md-input-container>
+			<br>
+			<button md-button (click)="loginWithEmailPassword()">Ingresar</button>
+		</md-card-content>
+	</md-card>
+</div>

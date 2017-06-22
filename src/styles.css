@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html{
+	background-color: #D0D0D0;
+}
+
+.mat-input-placeholder {
+	color: rgba(0,0,0,0.55);
+}
+
+.mat-button{
+	background-color: #673ab7;
+	color: white !important;
+}
+
+.mat-input-element{
+	padding: 2px 5px;
+}
+
+.mat-button{
+	margin: 5px !important;
+}
+
+.backdrop{
+	background-color: rgba(0,0,0,0.8);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin-left: -25px;
+	top: 0;
+}
+
+.upload-spinner{
+	margin: 0 auto;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.spinnerHolder{
+	position: initial;
+}
+
+.logout{
+	position: absolute;
+	left: 90%;
+	color: #673ab7;
+	cursor: pointer;
+}

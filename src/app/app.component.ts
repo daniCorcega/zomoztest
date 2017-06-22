@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthService } from './login/auth.service';
+import * as firebase from 'firebase/app';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: 'app-root',
+	templateUrl: './app.component.html'
 })
+
 export class AppComponent {
-  title = 'app';
+
+	constructor(private afAuth: AngularFireAuth, private authService: AuthService, private _router: Router){
+	}
 }

@@ -1,0 +1,51 @@
+<md-card class="formHolder">
+	<md-icon class="logout" (click)="authService.logout()">power_settings_new</md-icon>
+	<md-card-title *ngIf="!editando">Detalle Usuario</md-card-title>
+	<md-card-title *ngIf="editando">Editar Usuario</md-card-title>
+	<div class="detalle-usuario" *ngIf="user">
+		<ul>
+			<md-list-item>
+				<md-input-container>
+					<input mdInput placeholder="Nombre" [(ngModel)]="user.nombre" [disabled]="!editando" required>
+				</md-input-container>
+			</md-list-item>
+			<md-list-item>
+				<md-input-container>
+					<input mdInput placeholder="Apellido" [(ngModel)]="user.apellido" [disabled]="!editando" required>
+				</md-input-container>
+			</md-list-item>
+			<md-list-item>
+				<md-input-container>
+					<input mdInput placeholder="Correo" type="email" [(ngModel)]="user.correo" [disabled]="!editando" required>
+				</md-input-container>
+			</md-list-item>
+			<md-list-item>
+				<md-input-container class="w-18">
+					<input mdInput placeholder="Edad" type="number" [(ngModel)]="user.edad" [disabled]="!editando" required>
+				</md-input-container>
+				<md-select placeholder="Genero" [disabled]="!editando" [(ngModel)]="user.genero" required class="w-18">
+					<md-option *ngFor="let genero of generos" [value]="genero.value">{{ genero.viewValue }}</md-option>
+				</md-select>
+			</md-list-item>
+			<md-list-item>
+				<input placeholder="Foto de perfil" type="file" [(ngModel)]="foto" (change)="obtenerFile($event)" [disabled]="!editando">
+			</md-list-item>
+		</ul>
+
+		<div class="actions">
+			<button md-button *ngIf="!editando" (click)="editar()">Editar</button>
+			<button md-button *ngIf="editando" (click)="borrarArchivo()">Guardar</button>
+			<button md-button *ngIf="editando" (click)="cancelar()">Cancelar</button>
+			<button md-button *ngIf="mismoUsuario()" (click)="borrarDialog()">Eliminar</button>
+		</div>
+		<div class="back">
+			<button md-button (click)="volverListado()">Volver</button>
+		</div>
+		<div class="backdrop" *ngIf="uploading">
+			<div class="spinnerHolder">
+				<md-progress-spinner class="upload-spinner" color="primary" mode="indeterminate">
+				</md-progress-spinner>
+			</div>
+		</div>
+	</div>
+</md-card>

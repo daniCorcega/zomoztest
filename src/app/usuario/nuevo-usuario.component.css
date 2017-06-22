@@ -1,0 +1,23 @@
+.formHolder{
+	padding: 25px;
+	width: 60%;
+	margin: 0 auto;
+}
+
+.mat-list-item-content {
+    width: 60%;
+    margin: 5px auto;
+}
+
+.mat-input-container{
+	width: 60%;
+}
+
+.mat-title{
+	font-size: 30px;
+}
+
+.w-18{
+	width: 25%;
+	margin: 0 2.5%;
+}

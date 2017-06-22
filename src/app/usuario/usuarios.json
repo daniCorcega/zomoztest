@@ -1,0 +1,19 @@
+{
+	"usuarios": 
+	[
+		{
+			"nombre": "Daniel",
+			"apellido": "Corcega",
+			"correo": "danicorcega@gmail.com",
+			"edad": 25,
+			"genero": "M"
+		},
+		{
+			"nombre": "Cesar",
+			"apellido": "Hergueta",
+			"correo": "cahl@gmail.com",
+			"edad": 25,
+			"genero": "M"
+		}
+	]
+}

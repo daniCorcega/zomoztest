@@ -1,0 +1,7 @@
+<h2 md-dialog-title>Borrar Usuario</h2>
+<md-dialog-content>¿Seguro que desea eliminar a {{data.user}}?</md-dialog-content>
+<md-dialog-actions>
+	<button md-button md-dialog-close>No</button>
+	
+	<button md-button md-dialog-close (click)="borrarUsuario(data.key)">Si</button>
+</md-dialog-actions>

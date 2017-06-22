@@ -1,0 +1,21 @@
+<md-card class="formHolder">
+	<md-icon class="logout" (click)="authService.logout()">power_settings_new</md-icon>
+	<md-card-title>Usuarios</md-card-title>
+	<div class="listHolder">
+		<div class="actions">
+			<button md-button routerLink="/nuevo-usuario">Nuevo usuario</button>
+		</div>
+
+		<div class="usuariosHolder">
+			<md-list class="usuarios">
+				<md-list-item *ngFor="let user of usuarios | async" [class.selected]="user === selectedUser" (click)="detalleUsuario(user.$key)">
+					<img *ngIf="user.foto; else elseIcon;" src="{{user.foto}}" style="height: 25px"><span>{{user.nombre+" "+user.apellido}}</span>
+				</md-list-item>
+			</md-list>
+
+			<ng-template #elseIcon>
+				<md-icon color="primary">face</md-icon>
+			</ng-template>
+		</div>
+	</div>
+</md-card>

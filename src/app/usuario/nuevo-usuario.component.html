@@ -1,0 +1,59 @@
+<md-card class="formHolder">
+	<md-icon class="logout" (click)="authService.logout()">power_settings_new</md-icon>
+	<md-card-title>Nuevo Usuario</md-card-title>
+	<div class="nuevo-usuario">
+		<ul>
+			<md-list-item>
+				<md-input-container>
+					<input mdInput placeholder="Nombre" [(ngModel)]="user.nombre" required>
+				</md-input-container>
+			</md-list-item>
+			<md-list-item>
+				<md-input-container>
+					<input mdInput placeholder="Apellido" [(ngModel)]="user.apellido" required>
+				</md-input-container>
+			</md-list-item>
+			<md-list-item>
+				<md-input-container>
+					<input mdInput placeholder="Correo" email [(ngModel)]="user.correo" required>
+					<md-error>Debe colocar un correo correcto</md-error>
+				</md-input-container>
+			</md-list-item>
+			<md-list-item>
+				<md-input-container>
+					<input mdInput placeholder="Contraseña" type="password" [(ngModel)]="password.password" required>
+				</md-input-container>
+			</md-list-item>
+			<md-list-item>
+				<md-input-container>
+					<input mdInput placeholder="Confirmar contraseña" type="password" [(ngModel)]="password.confirmation" required>
+				</md-input-container>
+				<md-error *ngIf="!confirmarPwd()">Las contraseñas no coinciden</md-error>
+			</md-list-item>
+			<md-list-item>
+				<md-input-container class="w-18">
+					<input mdInput placeholder="Edad" type="number" [(ngModel)]="user.edad" required>
+					<md-error>La edad debe ser un número</md-error>
+				</md-input-container>
+				<md-select placeholder="Genero" [(ngModel)]="user.genero" required class="w-18">
+					<md-option *ngFor="let genero of generos" [value]="genero.value">{{ genero.viewValue }}</md-option>
+				</md-select>
+			</md-list-item>
+			<md-list-item>
+				<input placeholder="Foto de perfil" type="file" [(ngModel)]="foto" (change)="obtenerFile($event)">
+			</md-list-item>
+		</ul>
+
+		<div class="actions">
+			<button md-button type="submit" (click)="crear()">Añadir</button>
+			<button md-button (click)="volverListado()">Volver</button>
+		</div>
+		<div class="backdrop" *ngIf="uploading">
+			<div class="spinnerHolder">
+				<md-progress-spinner class="upload-spinner" color="primary" mode="indeterminate">
+				</md-progress-spinner>
+			</div>
+		</div>
+
+	</div>
+</md-card>

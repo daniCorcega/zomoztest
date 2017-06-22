@@ -1,0 +1,21 @@
+.loginCard{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.mat-card-content{
+	padding-top: 25px;
+}
+
+.mat-input-container{
+	padding: 10px;
+	width: 30%;
+}
+
+.mat-title{
+	font-size: 30px;
+}
+
+.loginHolder{
+	transform: translate(0, 50%);
+}
